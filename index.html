@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050806">
+  <meta name="description" content="TABARC-CODE builds strange, useful software, open tools and experimental systems.">
+  <title>TABARC-CODE // Independent Systems Lab</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to mainframe</a>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <header class="site-header" data-reveal>
+    <a class="brand" href="index.html" aria-label="TABARC-CODE home">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 7h38v34H5zM12 14h10v6H12zm0 13h16v6H12zm23-13h2v19h-2z"/></svg>
+      <span>TABARC<span class="acid">-CODE</span></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="docs/">Docs</a><a href="#about">Protocol</a>
+    </nav>
+    <button class="signal-switch" type="button" aria-pressed="true"><span></span> signal:on</button>
+  </header>
+
+  <main id="main">
+    <section class="hero grid-shell">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow"><span class="status-dot"></span> Independent systems lab / Nottingham, UK</p>
+        <h1>Code for the<br><span class="outline glitch" data-text="roads not taken.">roads not taken.</span></h1>
+        <p class="lede">Experimental software, useful machines and digital artefacts built where design, infrastructure and unruly ideas collide.</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">Enter archive <span>↘</span></a>
+          <a class="text-link" href="https://github.com/tabarc-code" rel="me">github.com/tabarc-code ↗</a>
+        </div>
+      </div>
+      <aside class="telemetry" data-reveal aria-label="System telemetry">
+        <div class="telemetry-head"><span>NODE_00</span><span class="blink">LIVE</span></div>
+        <div class="orb" aria-hidden="true"><div></div><div></div><div></div><b>TC</b></div>
+        <dl>
+          <div><dt>Practice</dt><dd>Design / code / systems</dd></div>
+          <div><dt>Bias</dt><dd>Open, repairable, strange</dd></div>
+          <div><dt>Status</dt><dd id="clock">--:--:-- UTC</dd></div>
+        </dl>
+      </aside>
+      <div class="scroll-cue" aria-hidden="true">SCROLL_TO_DECRYPT <span>↓</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Capabilities"><div>WEB SYSTEMS <i>✣</i> AGENTIC TOOLS <i>✣</i> HOME AUTOMATION <i>✣</i> GAME SYSTEMS <i>✣</i> OPEN HARDWARE <i>✣</i> STRANGE MACHINES <i>✣</i></div></section>
+
+    <section class="work section-pad" id="work">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">01 // Selected transmissions</p>
+        <h2>Built objects.<br><span class="muted">Working ideas.</span></h2>
+        <p>Software should do something. Preferably something useful, occasionally something slightly disobedient.</p>
+      </header>
+      <div class="project-list">
+        <a class="project-card" href="projects/" data-reveal data-index="01">
+          <div class="project-visual visual-globe" aria-hidden="true"><div class="planet"></div><span>LAT 52.95 / LON −1.15</span></div>
+          <div class="project-copy"><p>Geospatial / browser tool</p><h3>Globify</h3><p>Turn flat maps into layered, living worlds: geography, borders, biomes, clouds, lights and relief.</p><ul><li>JavaScript</li><li>Canvas</li><li>Worldbuilding</li></ul></div><span class="arrow">↗</span>
+        </a>
+        <a class="project-card reverse" href="projects/" data-reveal data-index="02">
+          <div class="project-visual visual-lattice" aria-hidden="true"><div class="lattice"></div><span>MEMORY GRAPH / EVIDENCE LOCK</span></div>
+          <div class="project-copy"><p>Agentic infrastructure</p><h3>ChatGTP Dreamer</h3><p>A skills lattice and evidence-backed memory steward for agents that need context without quietly rewriting history.</p><ul><li>MCP</li><li>Knowledge graph</li><li>Local AI</li></ul></div><span class="arrow">↗</span>
+        </a>
+        <a class="project-card" href="projects/" data-reveal data-index="03">
+          <div class="project-visual visual-signal" aria-hidden="true"><div class="wave"></div><span>HOME NODE / CARE PROTOCOL</span></div>
+          <div class="project-copy"><p>Local automation</p><h3>Medication Broadcast</h3><p>A local-first Home Assistant system for schedules, courses, injections, refills and caregiver escalation.</p><ul><li>Home Assistant</li><li>Local voice</li><li>IoT</li></ul></div><span class="arrow">↗</span>
+        </a>
+      </div>
+      <a class="button centre" href="projects/">Access all projects <span>→</span></a>
+    </section>
+
+    <section class="manifesto section-pad" id="about">
+      <div class="manifesto-label" data-reveal><p class="eyebrow">02 // Operating protocol</p><span>HUMAN<br>IN THE<br>LOOP</span></div>
+      <div class="manifesto-copy" data-reveal>
+        <p class="statement">We build technology that people can <em>inspect</em>, <em>alter</em> and <em>own</em>.</p>
+        <div class="principles">
+          <article><b>01</b><h3>Useful before impressive.</h3><p>Atmosphere matters. It just doesn’t excuse a machine that fails to work.</p></article>
+          <article><b>02</b><h3>Open the black box.</h3><p>Documentation, legible decisions and repair routes are part of the object.</p></article>
+          <article><b>03</b><h3>Leave room for oddness.</h3><p>Optimisation flattens everything. Better systems retain texture, edge and play.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" data-reveal>
+      <p class="eyebrow">03 // Open channel</p>
+      <h2>Have a difficult idea?</h2>
+      <a href="mailto:hello@tabarc-code.github.io">START_A_CONVERSATION<span>↗</span></a>
+      <p class="tiny">No pitch theatre. Send the problem, the constraints and the interesting bit.</p>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> TABARC-CODE</span><span>BUILT IN NOTTINGHAM // SERVED BY GITHUB PAGES</span><a href="#main">RETURN ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tabarc-code.github.io/sitemap.xml
