@@ -1,21 +1,19 @@
-# TABARC-CODE website
+# TABARC::CODE
 
-Static portfolio and project hub for `tabarc-code.github.io`. No build step, package manager or framework is required.
+Cyberpunk / terminal-inspired GitHub Pages site for `tabarc-code.github.io`.
 
-## Publish it
+## Structure
 
-1. Create a GitHub repository named `tabarc-code.github.io` under the `tabarc-code` account.
-2. Upload everything in this folder to the repository root.
-3. Open **Settings > Pages** in GitHub.
-4. Under **Build and deployment**, choose **GitHub Actions**.
-5. Push to the `main` branch. The included workflow publishes the site automatically.
+- `/` — TABARC::CODE landing page.
+- `/globified/` — integrated Globified application.
+- `/assets/` — site CSS, JavaScript and hero artwork.
+- `/.github/workflows/pages.yml` — GitHub Pages deployment workflow.
 
-## Edit it
+## Deploy
 
-- Main page: `index.html`
-- Colour, layout and animation: `assets/css/style.css`
-- Matrix rain, clock and reveal effects: `assets/js/site.js`
-- Project index: `projects/index.html`
-- Documentation index: `docs/index.html`
+1. Put these files in the `tabarc-code.github.io` repository under the `tabarc-code` account.
+2. Use **Settings → Pages → Source: GitHub Actions**.
+3. Push to `main` or run the workflow manually.
+4. The site will publish at `https://tabarc-code.github.io/`.
 
-Replace the provisional email address and project links before launch.
+The Globified application is kept as a self-contained page so its existing functionality is not entangled with the TABARC::CODE shell.

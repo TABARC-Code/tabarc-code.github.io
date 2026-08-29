@@ -1,99 +1,111 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#050806">
-  <meta name="description" content="TABARC-CODE builds strange, useful software, open tools and experimental systems.">
-  <title>TABARC-CODE // Independent Systems Lab</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/site.js" defer></script>
+  <meta name="theme-color" content="#020504">
+  <meta name="description" content="TABARC::CODE — open tools, open standards, open future.">
+  <title>TABARC::CODE — Open Tools. Open Standards. Open Future.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to mainframe</a>
-  <div class="noise" aria-hidden="true"></div>
   <canvas id="matrix" aria-hidden="true"></canvas>
+  <div class="crt" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
-  <header class="site-header" data-reveal>
-    <a class="brand" href="index.html" aria-label="TABARC-CODE home">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 7h38v34H5zM12 14h10v6H12zm0 13h16v6H12zm23-13h2v19h-2z"/></svg>
-      <span>TABARC<span class="acid">-CODE</span></span>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="TABARC Code home">
+      <span class="hamburger">☰</span>
+      <span class="brand-mark">TABARC<span>::</span>CODE</span>
+      <small>OPEN TOOLS. OPEN STANDARDS. OPEN FUTURE.</small>
     </a>
-    <nav aria-label="Primary navigation">
-      <a href="#work">Work</a><a href="docs/">Docs</a><a href="#about">Protocol</a>
-    </nav>
-    <button class="signal-switch" type="button" aria-pressed="true"><span></span> signal:on</button>
+    <div class="system-status"><span class="pulse"></span> SYSTEM STATUS <b>ONLINE</b></div>
+    <a class="access" href="#projects">⌑ &nbsp;// ACCESS TERMINAL</a>
   </header>
 
-  <main id="main">
-    <section class="hero grid-shell">
-      <div class="hero-copy" data-reveal>
-        <p class="eyebrow"><span class="status-dot"></span> Independent systems lab / Nottingham, UK</p>
-        <h1>Code for the<br><span class="outline glitch" data-text="roads not taken.">roads not taken.</span></h1>
-        <p class="lede">Experimental software, useful machines and digital artefacts built where design, infrastructure and unruly ideas collide.</p>
-        <div class="hero-actions">
-          <a class="button" href="#work">Enter archive <span>↘</span></a>
-          <a class="text-link" href="https://github.com/tabarc-code" rel="me">github.com/tabarc-code ↗</a>
-        </div>
+  <aside class="sidebar">
+    <div class="nav-title">&gt; NAVIGATION.EXE</div>
+    <nav>
+      <a class="active" href="#home"><b>⌂</b><span>01_HOME<small>WELCOME</small></span></a>
+      <a href="#projects"><b>◫</b><span>02_PROJECTS<small>OPEN SOURCE</small></span></a>
+      <a href="#plugins"><b>♧</b><span>03_PLUGINS<small>WORDPRESS TOOLS</small></span></a>
+      <a href="#documentation"><b>▣</b><span>04_DOCUMENTATION<small>GUIDES &amp; REFS</small></span></a>
+      <a href="#standards"><b>◈</b><span>05_STANDARDS<small>OTDS FRAMEWORK</small></span></a>
+      <a href="#tools"><b>⌁</b><span>06_TOOLS<small>UTILITIES</small></span></a>
+      <a href="#repositories"><b>⌘</b><span>07_GITHUB<small>REPOSITORY INDEX</small></span></a>
+      <a href="#gists"><b>✦</b><span>08_GISTS<small>FIELD NOTES</small></span></a>
+      <a href="#about"><b>ⓘ</b><span>09_ABOUT<small>THE MISSION</small></span></a>
+      <a href="#changelog"><b>◧</b><span>10_CHANGELOG<small>WHAT'S NEW</small></span></a>
+    </nav>
+    <div class="whoami">
+      <div>&gt; WHOAMI</div>
+      <p>developer<br>builder<br>architect<br>dreamer <i></i></p>
+    </div>
+    <div class="socials"><a href="https://github.com/tabarc-code" target="_blank">◉</a><a href="#projects">↗</a><a href="#about">in</a><a href="mailto:hello@tabarc.dev">✉</a></div>
+  </aside>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-copy">
+        <div class="boot">&gt; SYSTEM_BOOT v2.5.1<br>&gt; CONNECTION ESTABLISHED</div>
+        <h1>TABARC::CODE</h1>
+        <h2>BUILDING THE FUTURE<br>IN OPEN SOURCE<span>_</span></h2>
+        <p class="lede">Software. Standards. Stories.<br>Forged in code. Shared with purpose.</p>
+        <div class="actions"><a class="btn primary" href="#projects">&gt; EXPLORE PROJECTS <b>→</b></a><a class="btn" href="https://github.com/tabarc-code" target="_blank" rel="noopener">&gt; VIEW ON GITHUB &nbsp; ◉</a></div>
       </div>
-      <aside class="telemetry" data-reveal aria-label="System telemetry">
-        <div class="telemetry-head"><span>NODE_00</span><span class="blink">LIVE</span></div>
-        <div class="orb" aria-hidden="true"><div></div><div></div><div></div><b>TC</b></div>
-        <dl>
-          <div><dt>Practice</dt><dd>Design / code / systems</dd></div>
-          <div><dt>Bias</dt><dd>Open, repairable, strange</dd></div>
-          <div><dt>Status</dt><dd id="clock">--:--:-- UTC</dd></div>
-        </dl>
-      </aside>
-      <div class="scroll-cue" aria-hidden="true">SCROLL_TO_DECRYPT <span>↓</span></div>
+      <aside class="quote"><div>// QUOTE.EXE</div><p>“The sky above the port was the color of television, tuned to a dead channel.”</p><small>— WILLIAM GIBSON<br>NEUROMANCER</small></aside>
     </section>
 
-    <section class="ticker" aria-label="Capabilities"><div>WEB SYSTEMS <i>✣</i> AGENTIC TOOLS <i>✣</i> HOME AUTOMATION <i>✣</i> GAME SYSTEMS <i>✣</i> OPEN HARDWARE <i>✣</i> STRANGE MACHINES <i>✣</i></div></section>
+    <div class="commit"><span>// LATEST_COMMIT</span><code>feat(otds): add OTDS-201 Mechanical Language Semantics</code><time>2h ago</time><a href="#changelog">VIEW CHANGELOG</a></div>
 
-    <section class="work section-pad" id="work">
-      <header class="section-head" data-reveal>
-        <p class="eyebrow">01 // Selected transmissions</p>
-        <h2>Built objects.<br><span class="muted">Working ideas.</span></h2>
-        <p>Software should do something. Preferably something useful, occasionally something slightly disobedient.</p>
-      </header>
-      <div class="project-list">
-        <a class="project-card" href="projects/" data-reveal data-index="01">
-          <div class="project-visual visual-globe" aria-hidden="true"><div class="planet"></div><span>LAT 52.95 / LON −1.15</span></div>
-          <div class="project-copy"><p>Geospatial / browser tool</p><h3>Globify</h3><p>Turn flat maps into layered, living worlds: geography, borders, biomes, clouds, lights and relief.</p><ul><li>JavaScript</li><li>Canvas</li><li>Worldbuilding</li></ul></div><span class="arrow">↗</span>
-        </a>
-        <a class="project-card reverse" href="projects/" data-reveal data-index="02">
-          <div class="project-visual visual-lattice" aria-hidden="true"><div class="lattice"></div><span>MEMORY GRAPH / EVIDENCE LOCK</span></div>
-          <div class="project-copy"><p>Agentic infrastructure</p><h3>ChatGTP Dreamer</h3><p>A skills lattice and evidence-backed memory steward for agents that need context without quietly rewriting history.</p><ul><li>MCP</li><li>Knowledge graph</li><li>Local AI</li></ul></div><span class="arrow">↗</span>
-        </a>
-        <a class="project-card" href="projects/" data-reveal data-index="03">
-          <div class="project-visual visual-signal" aria-hidden="true"><div class="wave"></div><span>HOME NODE / CARE PROTOCOL</span></div>
-          <div class="project-copy"><p>Local automation</p><h3>Medication Broadcast</h3><p>A local-first Home Assistant system for schedules, courses, injections, refills and caregiver escalation.</p><ul><li>Home Assistant</li><li>Local voice</li><li>IoT</li></ul></div><span class="arrow">↗</span>
-        </a>
-      </div>
-      <a class="button centre" href="projects/">Access all projects <span>→</span></a>
+    <section class="grid" id="projects">
+      <article class="panel otds" id="standards">
+        <label>// FEATURED_STANDARD</label><h3>OTDS</h3><h4>OPEN TABLETOP<br>DOCUMENTATION STANDARD</h4>
+        <p>A vendor-neutral standard for tabletop RPG documentation, writing, rules, worldbuilding, and publishing.</p>
+        <div class="radar">RULES<br><span>◈</span><small>WORLD &nbsp;&nbsp; WRITING &nbsp;&nbsp; PUBLISHING<br>DOCUMENTATION</small></div>
+        <a class="btn small" href="#documentation">&gt; LEARN MORE →</a>
+      </article>
+
+      <article class="panel plugins" id="plugins">
+        <label>// PLUGINS</label><h3>WORDPRESS PLUGINS</h3><p>Powerful tools for creators and publishers.</p>
+        <a class="plugin" href="#"><b>♙</b><span>Tabarc Media Sync<small>Auto-import media files</small></span>→</a>
+        <a class="plugin" href="#"><b>◇</b><span>Cleanroom Rebuild<small>Clean. Optimize. Rebuild.</small></span>→</a>
+        <a class="plugin" href="#"><b>◈</b><span>More coming soon...<small>Stay tuned.</small></span>→</a>
+        <a class="browse" href="#projects">&gt; BROWSE ALL PLUGINS</a>
+      </article>
+
+      <article class="panel globified" id="tools">
+        <label>// GLOBIFIED</label><div class="globe-art" aria-hidden="true"></div><div class="globified-copy"><h3>GLOBIFIED</h3><p>SEE THE WORLD.<br>CONNECTED.</p><small>An interactive globe and map visualisation workstation.</small><a class="btn small" href="globified/">&gt; ENTER GLOBIFIED →</a></div>
+      </article>
     </section>
 
-    <section class="manifesto section-pad" id="about">
-      <div class="manifesto-label" data-reveal><p class="eyebrow">02 // Operating protocol</p><span>HUMAN<br>IN THE<br>LOOP</span></div>
-      <div class="manifesto-copy" data-reveal>
-        <p class="statement">We build technology that people can <em>inspect</em>, <em>alter</em> and <em>own</em>.</p>
-        <div class="principles">
-          <article><b>01</b><h3>Useful before impressive.</h3><p>Atmosphere matters. It just doesn’t excuse a machine that fails to work.</p></article>
-          <article><b>02</b><h3>Open the black box.</h3><p>Documentation, legible decisions and repair routes are part of the object.</p></article>
-          <article><b>03</b><h3>Leave room for oddness.</h3><p>Optimisation flattens everything. Better systems retain texture, edge and play.</p></article>
-        </div>
-      </div>
+    <section class="repo-index" id="repositories">
+      <div class="section-head"><div><label>// REPOSITORY_INDEX.EXE</label><h2>OPEN SOURCE. ORGANISED.</h2><p>Live-indexed from TABARC-Code. Repositories are grouped by purpose so the archive stays navigable as it grows.</p></div><div class="repo-controls"><select id="repo-filter" aria-label="Filter repositories"><option>ALL</option><option>AI &amp; LLM SKILLS</option><option>WORDPRESS &amp; PLUGINS</option><option>TABLETOP &amp; RPG</option><option>WRITING &amp; DOCUMENTATION</option><option>TOOLS &amp; EXPERIMENTS</option></select><small id="repo-status">BOOTING INDEX...</small></div></div>
+      <div id="repo-grid" class="repo-grid"><div class="loading-state">&gt; INDEXING TABARC-CODE REPOSITORIES...<span>_</span></div></div>
+      <div class="index-footer"><a class="btn" href="https://github.com/TABARC-Code?tab=repositories" target="_blank" rel="noopener">&gt; OPEN FULL GITHUB ARCHIVE →</a></div>
     </section>
 
-    <section class="contact section-pad" data-reveal>
-      <p class="eyebrow">03 // Open channel</p>
-      <h2>Have a difficult idea?</h2>
-      <a href="mailto:hello@tabarc-code.github.io">START_A_CONVERSATION<span>↗</span></a>
-      <p class="tiny">No pitch theatre. Send the problem, the constraints and the interesting bit.</p>
+    <section class="gists" id="gists">
+      <div class="section-head"><div><label>// GIST_ARCHIVE.EXE</label><h2>FIELD NOTES &amp; EXPERIMENTS.</h2><p>Short-form ideas, prototypes, technical notes and unfinished things that are useful enough to keep.</p></div><div class="repo-controls"><small id="gist-status">CONNECTING...</small></div></div>
+      <div id="gist-grid" class="gist-grid"><div class="loading-state">&gt; CONNECTING TO GIST ARCHIVE...<span>_</span></div></div>
+      <div class="index-footer"><a class="btn" href="https://gist.github.com/TABARC-Code" target="_blank" rel="noopener">&gt; OPEN GIST ARCHIVE →</a></div>
     </section>
+
+    <section class="lower" id="documentation">
+      <div><label>// DOCUMENTATION</label><h3>KNOWLEDGE SHOULD BE OPEN.</h3><p>Structured documentation, technical writing systems, standards, references and reusable knowledge architecture.</p></div>
+      <div class="terminal-box"><div>&gt; index --all</div><div>OTDS ............ ACTIVE</div><div>PLUGINS .......... ONLINE</div><div>GLOBIFIED ........ READY</div><div>TOOLS ............ STANDBY<span>_</span></div></div>
+    </section>
+
+    <section class="about" id="about"><label>// ABOUT.EXE</label><h2>OPEN SYSTEMS.<br>OPEN MINDS.<br>OPEN FUTURE.</h2><p>TABARC::CODE is a home for software, standards and experimental tools built to be useful, inspectable and shared.</p></section>
+    <section class="changelog" id="changelog"><label>// CHANGELOG</label><div><b>v2.5.1</b><span>OTDS-201 Mechanical Language Semantics</span><time>2026-08-29</time></div><div><b>v2.5.0</b><span>GLOBIFIED integration shell</span><time>2026-08-28</time></div></section>
   </main>
 
-  <footer><span>© <span id="year"></span> TABARC-CODE</span><span>BUILT IN NOTTINGHAM // SERVED BY GITHUB PAGES</span><a href="#main">RETURN ↑</a></footer>
+  <footer><span>&gt; TERMINAL &nbsp; | &nbsp; <b>tabarc@code:~$</b> building the future, one commit at a time...<i>_</i></span><span>© 2026 TABARC CODE &nbsp;&nbsp;&nbsp; ALL RIGHTS OPEN</span></footer>
+  <script src="assets/site.js"></script>
+  <script src="assets/repo-index.js"></script>
 </body>
 </html>
