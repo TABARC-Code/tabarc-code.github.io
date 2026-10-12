@@ -8,7 +8,7 @@
   if (!repoGrid) return;
 
   const categories = [
-    ['AI & LLM SKILLS', r => /skill|claude|ai|llm|prompt|agent/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
+    ['AI & LLM SKILLS', r => /skill|claude|\bai\b|llm|prompt|agent|mcp/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
     ['WORDPRESS & PLUGINS', r => /wordpress|wp-|plugin|woocommerce|gutenberg/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
     ['TABLETOP & RPG', r => /tabletop|dnd|rpg|gaming|tournament|events|dice/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
     ['WRITING & DOCUMENTATION', r => /writing|writer|documentation|otds|language|editorial|style/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
@@ -16,6 +16,35 @@
   ];
 
   let repos = [];
+
+  // The unauthenticated GitHub API allows 60 requests an hour per IP, and one
+  // visit costs up to four. A shared office or phone network runs dry fast,
+  // so keep the answer for 30 minutes. Storage can be blocked; never rely on it.
+  const TTL = 30 * 60 * 1000;
+  function cacheGet(key) {
+    try {
+      const hit = JSON.parse(sessionStorage.getItem(key) || localStorage.getItem(key) || 'null');
+      return hit && Date.now() - hit.t < TTL ? hit.v : null;
+    } catch (_) { return null; }
+  }
+  function cacheSet(key, v) {
+    try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), v })); } catch (_) { /* private mode, quota... carry on */ }
+  }
+  function ago(iso) {
+    const mins = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+    if (mins < 60) return `${mins || 1}m ago`;
+    if (mins < 2880) return `${Math.round(mins / 60)}h ago`;
+    return `${Math.round(mins / 1440)}d ago`;
+  }
+  function showLatest(list) {
+    const text = document.querySelector('#latest-push-text');
+    const time = document.querySelector('#latest-push-time');
+    if (!text) return;
+    const latest = list.filter(r => r.pushed_at).sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))[0];
+    if (!latest) { text.textContent = 'see GitHub for recent activity'; return; }
+    text.textContent = latest.name;
+    if (time) time.textContent = ago(latest.pushed_at);
+  }
 
   function esc(s='') { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function classify(r) {
@@ -44,8 +73,16 @@
 
   async function loadRepos() {
     try {
+      let all = cacheGet('tabarc-repos');
+      if (all) {
+        showLatest(all);
+        repos = all.filter(r => !r.fork && !r.private);
+        render();
+        return;
+      }
       repoStatus.textContent = 'CONNECTING TO GITHUB API...';
-      let page = 1, all = [];
+      let page = 1;
+      all = [];
       while (page <= 3) {
         const res = await fetch(`https://api.github.com/users/${owner}/repos?per_page=100&page=${page}&sort=updated`, {headers:{Accept:'application/vnd.github+json'}});
         if (!res.ok) throw new Error(`GitHub API ${res.status}`);
@@ -54,9 +91,15 @@
         if (batch.length < 100) break;
         page++;
       }
+      // Keep only the fields the page uses; the raw API objects are ~10x the size.
+      all = all.map(r => ({ name: r.name, description: r.description, topics: r.topics, language: r.language, stargazers_count: r.stargazers_count, archived: r.archived, fork: r.fork, private: r.private, html_url: r.html_url, updated_at: r.updated_at, pushed_at: r.pushed_at }));
+      cacheSet('tabarc-repos', all);
+      showLatest(all);
       repos = all.filter(r => !r.fork && !r.private);
       render();
     } catch (e) {
+      const text = document.querySelector('#latest-push-text');
+      if (text) text.textContent = 'see GitHub for recent activity';
       repoStatus.textContent = 'LIVE INDEX UNAVAILABLE — OPEN GITHUB DIRECTLY';
       repoGrid.innerHTML = `<div class="empty-state"><p>GitHub could not be queried from this browser session.</p><a class="btn small" href="https://github.com/${owner}?tab=repositories" target="_blank" rel="noopener">&gt; VIEW ALL REPOSITORIES →</a></div>`;
     }

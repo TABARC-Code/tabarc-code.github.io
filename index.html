@@ -3,13 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#020504"><meta name="google-site-verification" content="mfJ0MQeP41o-sSxH8vuK3E07ABOXggW6W_yxKsHSkQE" /><meta name="description" content="TABARC::CODE — open tools, open standards, open future.">
-  <title>TABARC::CODE — Open Tools. Open Standards. Open Future.</title><link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#020504">
+  <meta name="google-site-verification" content="mfJ0MQeP41o-sSxH8vuK3E07ABOXggW6W_yxKsHSkQE" />
+  <meta name="description" content="TABARC::CODE — open tools, open standards, open future.">
+  <title>TABARC::CODE — Open Tools. Open Standards. Open Future.</title>
+  <link rel="canonical" href="https://tabarc-code.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TABARC::CODE">
+  <meta property="og:title" content="TABARC::CODE — Open Tools. Open Standards. Open Future.">
+  <meta property="og:description" content="Software, standards and stories, built in the open.">
+  <meta property="og:url" content="https://tabarc-code.github.io/">
+  <meta property="og:image" content="https://tabarc-code.github.io/assets/tabarc-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/tabarc-hero.webp" type="image/webp">
   <link rel="stylesheet" href="assets/style.css">
-  <meta name="google-site-verification" content="mfJ0MQeP41o-sSxH8vuK3E07ABOXggW6W_yxKsHSkQE" /><link rel="icon" type="image/png" href="/favicon-32x32.png"><link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
   <canvas id="matrix" aria-hidden="true"></canvas>
   <div class="crt" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
@@ -42,7 +60,7 @@
       <div>&gt; WHOAMI</div>
       <p>developer<br>builder<br>architect<br>dreamer <i></i></p>
     </div>
-    <div class="socials"><a href="https://github.com/tabarc-code" target="_blank">◉</a><a href="#projects">↗</a><a href="#about">in</a><a href="mailto:hello@tabarc.dev">✉</a></div>
+    <div class="socials"><a href="https://github.com/TABARC-Code" target="_blank" rel="noopener" aria-label="TABARC-Code on GitHub">◉</a><a href="https://gist.github.com/TABARC-Code" target="_blank" rel="noopener" aria-label="TABARC-Code gists">✦</a><a href="mailto:hello@tabarc.dev" aria-label="Email">✉</a></div>
   </aside>
 
   <main id="home">
@@ -53,12 +71,12 @@
         <h1>TABARC::CODE</h1>
         <h2>BUILDING THE FUTURE<br>IN OPEN SOURCE<span>_</span></h2>
         <p class="lede">Software. Standards. Stories.<br>Forged in code. Shared with purpose.</p>
-        <div class="actions"><a class="btn primary" href="#projects">&gt; EXPLORE PROJECTS <b>→</b></a><a class="btn" href="https://github.com/tabarc-code" target="_blank" rel="noopener">&gt; VIEW ON GITHUB &nbsp; ◉</a></div>
+        <div class="actions"><a class="btn primary" href="#projects">&gt; EXPLORE PROJECTS <b>→</b></a><a class="btn" href="https://github.com/TABARC-Code" target="_blank" rel="noopener">&gt; VIEW ON GITHUB &nbsp; ◉</a></div>
       </div>
       <aside class="quote"><div>// QUOTE.EXE</div><p>“The sky above the port was the color of television, tuned to a dead channel.”</p><small>— WILLIAM GIBSON<br>NEUROMANCER</small></aside>
     </section>
 
-    <div class="commit"><span>// LATEST_COMMIT</span><code>feat(otds): add OTDS-201 Mechanical Language Semantics</code><time>2h ago</time><a href="#changelog">VIEW CHANGELOG</a></div>
+    <div class="commit" id="latest-push"><span>// LATEST_PUSH</span><code id="latest-push-text">checking GitHub...</code><time id="latest-push-time"></time><a href="#repositories">VIEW REPOSITORIES</a></div>
 
     <section class="grid" id="projects">
       <article class="panel otds" id="standards">
@@ -70,9 +88,9 @@
 
       <article class="panel plugins" id="plugins">
         <label>// PLUGINS</label><h3>WORDPRESS PLUGINS</h3><p>Powerful tools for creators and publishers.</p>
-        <a class="plugin" href="#"><b>♙</b><span>Tabarc Media Sync<small>Auto-import media files</small></span>→</a>
+        <a class="plugin" href="#repositories"><b>♙</b><span>Tabarc Media Sync<small>Auto-import media files</small></span>→</a>
         <a class="plugin" href="#repositories"><b>◇</b><span>Eclectic Code Depository<small>Tools, experiments and useful oddities.</small></span>→</a>
-        <a class="plugin" href="#"><b>◈</b><span>More coming soon...<small>Stay tuned.</small></span>→</a>
+        <div class="plugin"><b>◈</b><span>More coming soon...<small>Stay tuned.</small></span></div>
         <a class="browse" href="#projects">&gt; BROWSE ALL PLUGINS</a>
       </article>
 
@@ -82,13 +100,13 @@
     </section>
 
     <section class="repo-index" id="repositories">
-      <div class="section-head"><div><label>// REPOSITORY_INDEX.EXE</label><h2>OPEN SOURCE. ORGANISED.</h2><p>Live-indexed from TABARC-Code. Repositories are grouped by purpose so the archive stays navigable as it grows.</p></div><div class="repo-controls"><select id="repo-filter" aria-label="Filter repositories"><option>ALL</option><option>AI &amp; LLM SKILLS</option><option>WORDPRESS &amp; PLUGINS</option><option>TABLETOP &amp; RPG</option><option>WRITING &amp; DOCUMENTATION</option><option>TOOLS &amp; EXPERIMENTS</option></select><small id="repo-status">BOOTING INDEX...</small></div></div>
+      <div class="section-head"><div><label>// REPOSITORY_INDEX.EXE</label><h2>OPEN SOURCE. ORGANISED.</h2><p>Live-indexed from TABARC-Code. Repositories are grouped by purpose so the archive stays navigable as it grows.</p></div><div class="repo-controls"><select id="repo-filter" aria-label="Filter repositories"><option>ALL</option><option>AI &amp; LLM SKILLS</option><option>WORDPRESS &amp; PLUGINS</option><option>TABLETOP &amp; RPG</option><option>WRITING &amp; DOCUMENTATION</option><option>TOOLS &amp; EXPERIMENTS</option></select><small id="repo-status" role="status" aria-live="polite">BOOTING INDEX...</small></div></div>
       <div id="repo-grid" class="repo-grid"><div class="loading-state">&gt; INDEXING TABARC-CODE REPOSITORIES...<span>_</span></div></div>
       <div class="index-footer"><a class="btn" href="https://github.com/TABARC-Code?tab=repositories" target="_blank" rel="noopener">&gt; OPEN FULL GITHUB ARCHIVE →</a></div>
     </section>
 
     <section class="gists" id="gists">
-      <div class="section-head"><div><label>// GIST_ARCHIVE.EXE</label><h2>FIELD NOTES &amp; EXPERIMENTS.</h2><p>Short-form ideas, prototypes, technical notes and unfinished things that are useful enough to keep.</p></div><div class="repo-controls"><small id="gist-status">CONNECTING...</small></div></div>
+      <div class="section-head"><div><label>// GIST_ARCHIVE.EXE</label><h2>FIELD NOTES &amp; EXPERIMENTS.</h2><p>Short-form ideas, prototypes, technical notes and unfinished things that are useful enough to keep.</p></div><div class="repo-controls"><small id="gist-status" role="status" aria-live="polite">CONNECTING...</small></div></div>
       <div id="gist-grid" class="gist-grid"><div class="loading-state">&gt; CONNECTING TO GIST ARCHIVE...<span>_</span></div></div>
       <div class="index-footer"><a class="btn" href="https://gist.github.com/TABARC-Code" target="_blank" rel="noopener">&gt; OPEN GIST ARCHIVE →</a></div>
     </section>
