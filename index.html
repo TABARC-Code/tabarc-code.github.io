@@ -15,9 +15,9 @@
   <meta property="og:url" content="https://tabarc-code.github.io/">
   <meta property="og:image" content="https://tabarc-code.github.io/assets/tabarc-hero.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/ibm-plex-mono-normal-400-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/orbitron-normal-400-900-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/site-fonts.css">
   <link rel="preload" as="image" href="assets/tabarc-hero.webp" type="image/webp">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -60,7 +60,7 @@
       <div>&gt; WHOAMI</div>
       <p>developer<br>builder<br>architect<br>dreamer <i></i></p>
     </div>
-    <div class="socials"><a href="https://github.com/TABARC-Code" target="_blank" rel="noopener" aria-label="TABARC-Code on GitHub">◉</a><a href="https://gist.github.com/TABARC-Code" target="_blank" rel="noopener" aria-label="TABARC-Code gists">✦</a><a href="mailto:hello@tabarc.dev" aria-label="Email">✉</a></div>
+    <div class="socials"><a href="https://github.com/TABARC-Code" target="_blank" rel="noopener" aria-label="TABARC-Code on GitHub">◉</a><a href="https://gist.github.com/TABARC-Code" target="_blank" rel="noopener" aria-label="TABARC-Code gists">✦</a></div>
   </aside>
 
   <main id="home">
@@ -88,7 +88,8 @@
 
       <article class="panel plugins" id="plugins">
         <label>// PLUGINS</label><h3>WORDPRESS PLUGINS</h3><p>Powerful tools for creators and publishers.</p>
-        <a class="plugin" href="#repositories"><b>♙</b><span>Tabarc Media Sync<small>Auto-import media files</small></span>→</a>
+        <a class="plugin" href="https://github.com/TABARC-Code/wp-media-hygiene-inspector" target="_blank" rel="noopener"><b>♙</b><span>WP Media Hygiene Inspector<small>Audits the Media Library. Deletes nothing.</small></span>→</a>
+        <a class="plugin" href="https://github.com/TABARC-Code/wp-media-orphan-scanner" target="_blank" rel="noopener"><b>♧</b><span>WP Media Orphan Scanner<small>Finds missing and unused uploads.</small></span>→</a>
         <a class="plugin" href="#repositories"><b>◇</b><span>Eclectic Code Depository<small>Tools, experiments and useful oddities.</small></span>→</a>
         <div class="plugin"><b>◈</b><span>More coming soon...<small>Stay tuned.</small></span></div>
         <a class="browse" href="#projects">&gt; BROWSE ALL PLUGINS</a>

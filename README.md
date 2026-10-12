@@ -7,7 +7,7 @@ Cyberpunk, terminal-flavoured GitHub Pages site for `tabarc-code.github.io`. Pla
 - `/` is the landing page. The repository and gist lists are built in the browser from the GitHub API (`assets/repo-index.js`).
 - `/globified/` is the Globified app, kept as one self-contained page so the site shell can't break it.
 - `/projects/` and `/docs/` are older-style pages with provisional content. They use `assets/css/` and `assets/js/`, not the landing page's `assets/style.css` and `assets/site.js`. Two sets of styles for one site is untidy and I know it.
-- `/assets/` has the styles, scripts and hero artwork (`tabarc-hero.webp` is what the page loads; the PNG is the original).
+- `/assets/` has the styles, scripts, fonts and hero artwork (`tabarc-hero.webp` is what the page loads; the PNG is the original).
 - `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` and the icons do what they say.
 
 ## Things worth knowing
@@ -16,7 +16,7 @@ Cyberpunk, terminal-flavoured GitHub Pages site for `tabarc-code.github.io`. Pla
 - "Latest push" on the landing page is the most recently pushed repository, forks included, taken from that same API response. It used to be a hard-coded line that always said "2h ago", which was charming and untrue.
 - The repo index hides forks on purpose. If you want them shown, it's one filter in `assets/repo-index.js`.
 - Respects `prefers-reduced-motion`: the matrix rain paints a still backdrop instead of animating.
-- Fonts come from Google Fonts. Fine for now. Bundling them would remove the last third-party request, as was done for Kinky Jars.
+- Fonts are self-hosted in `assets/fonts/` (IBM Plex Mono, Orbitron, Space Grotesk, Atkinson Hyperlegible), downloaded from Google Fonts. All are SIL OFL 1.1; the licence texts and copyright lines are in `assets/fonts/LICENCES.md`. The pages' only third-party request left is the GitHub API for the repo index.
 
 ## Deploy
 
