@@ -7,11 +7,15 @@
   const filter = document.querySelector('#repo-filter');
   if (!repoGrid) return;
 
+  const hay = r => `${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`.replace(/[-_.]+/g, ' ');
   const categories = [
-    ['AI & LLM SKILLS', r => /skill|claude|ai|llm|prompt|agent/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
-    ['WORDPRESS & PLUGINS', r => /wordpress|wp-|plugin|woocommerce|gutenberg/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
-    ['TABLETOP & RPG', r => /tabletop|dnd|rpg|gaming|tournament|events|dice/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
-    ['WRITING & DOCUMENTATION', r => /writing|writer|documentation|otds|language|editorial|style/i.test(`${r.name} ${r.description || ''} ${(r.topics || []).join(' ')}`)],
+    ['WORDPRESS & PLUGINS', r => /\b(wordpress|wp|woocommerce|gutenberg|indexnow|kadence)\b/i.test(hay(r))],
+    ['AI & LLM SKILLS', r => /\b(skills?|claude|llm|prompts?|agents?|mcp|chatgtp|chatgpt|deepseek|hive|hydra|humanizer|n8n)\b/i.test(hay(r))],
+    ['TABLETOP & RPG', r => /\b(tabletop|dnd|rpg|wargaming|boardgame|board game|tournaments?|dice|charterstone|ccg|tcg)\b/i.test(hay(r))],
+    ['WINDOWS UTILITIES', r => /\b(windows|powershell|ps1|winget|wiggle|keepawake|clipboard|screen coordinates|type and click)\b/i.test(hay(r))],
+    ['GAMES & MEDIA', r => /\b(games?|arcade|vectoroids|pixel|media|iptv|vlc|plex|nfo|telnet|bulletin board|bbs|jetman)\b/i.test(hay(r))],
+    ['HOME & HARDWARE', r => /\b(home assistant|dose|medicat\w*|udp|hardware|weather|solarify|printventor\w*|libre\w*)\b/i.test(hay(r))],
+    ['WRITING & DOCUMENTATION', r => /\b(writing|writers?|documentation|docs?|lexicon|editorial|style|indexer|blog|otds)\b/i.test(hay(r))],
     ['TOOLS & EXPERIMENTS', () => true]
   ];
 
